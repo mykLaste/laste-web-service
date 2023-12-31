@@ -1,0 +1,98 @@
+#sample1 {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+
+
+    .header, .navigation-menu, .footer {
+        background-color: #222;
+        padding: 1rem;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header .logo {
+        font-size: 2rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    .navigation-menu ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .navigation-menu a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .main-visual {
+        width: 100%;
+        height: 300px;
+        background-image: url('https://unsplash.it/1200/300?random');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .content {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 2rem;
+    }
+
+    .section {
+        margin-bottom: 4rem;
+    }
+
+    .products-grid {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .product-item {
+        width: 100%;
+        height: 200px;
+        background-image: url('https://via.placeholder.com/200');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer; /* added for the ability to switch products */
+    }
+
+    .history-image {
+        width: 100%;
+        height: 200px;
+        background-image: url('https://unsplash.it/1200/200?image=1054');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .access-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .access-map img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .footer {
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+}

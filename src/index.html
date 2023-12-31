@@ -1,17 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<title>ネット通販支援サービス - LASTE</title>
 
-<body>
+</head>
+<body id="home">
+  <header class="header">
+    <div class="leftside">
+      <div class="logo">
+        <img src="./img/LASTE_logo.png" alt="">
+      </div>
+
+      <div id="siteTitle">
+        <h1>ネット運用支援サービス</h1>
+        <p class="subtitle">営業のプロと経営コンサルタント監修のサービス</p>
+      </div>
+    </div>
+    <nav class="nav-menu">
+      <a href="#" class="nav-item"><span>ホーム</span></a>
+      <a href="#" class="nav-item"><span>サービス紹介</span></a>
+      <a href="#" class="nav-item"><span>料金表</span></a>
+      <a href="#" class="nav-item"><span>会社概要</span></a>
+
+      <a href="#" class="nav-item nav-item-answer"><span>早速質問に</span><span>答える</span></a>
+      <a href="#" class="nav-item nav-item-contact"><span>お問い合わせ</span></a>
+    </nav>
+  </header>
+
   <main>
-    <h1>Vanilla JavaScript App</h1>
+    <div class="firstview">
+      <div class="content-box">
+        <div class="title">質問に答えるだけでパッと注文！</div>
+        <div class="subtitle">あなたに必要なHP・LPを導き出します！</div>
+        <div class="action-button-wrapper"><button class="action-button">早速質問に答える</button></div>
+      </div>
+    </div>
+    
+    <div class="gozonji">
+      <h2 class="title">ご存じですか？</h2>
+      <p class="lead">現在のネット通販で注目すべき3つのポイント</p>
+      <div class="list-container">
+        <ul>
+          <li class="list-item">顧客の知りたい情報が見つかる</li>
+          <li class="list-item">スマートに続けられる</li>
+          <li class="list-item">売上への効果を分析できる</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mokuteki">
+      <h2 class="title">業界標準ではなく、目的に合ったネット運用を</h2>
+      <div class="list-container">
+        <p class="list-title">＜支援の具体例＞</p>
+        <ul>
+          <li class="list-item">必要なホームページやSNSの選別</li>
+          <li class="list-item">各媒体でやるべき目的の明確化</li>
+        </ul>
+      </div>
+    </div>
   </main>
 </body>
-
 </html>

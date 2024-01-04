@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<title>ネット通販支援サービス - LASTE</title>
+
+</head>
+<body id="hpquestion">
+  <header class="header">
+    <div class="leftside">
+      <div class="logo">
+        <img src="./img/LASTE_logo.png" alt="">
+      </div>
+
+      <div id="siteTitle">
+        <h1>ネット運用支援サービス</h1>
+        <p class="subtitle">営業のプロと経営コンサルタント監修のサービス</p>
+      </div>
+    </div>
+    <nav class="nav-menu">
+      <!-- <a href="#" class="nav-item"><span>ホーム</span></a>
+      <a href="#" class="nav-item"><span>サービス紹介</span></a>
+      <a href="#" class="nav-item"><span>料金表</span></a>
+      <a href="#" class="nav-item"><span>会社概要</span></a> -->
+
+      <a href="#" class="nav-item nav-item-answer"><span>HP・LPを</span><span>作成する</span></a>
+      <a href="#" class="nav-item nav-item-contact"><span>お問い合わせ</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="normal-section">
+      <h2 class="lead">
+        あなたに最適なHPを作成するために以下の質問にお答えください
+      </h2>
+      <form id="quizForm">
+        <div id="questions">
+            <!-- 質問はここに挿入されます -->
+        </div>
+        <div class="control">
+          <span><img class="prev" val="1" src="img/icons/circle-chevron-left-solid.svg" alt="back"></span>
+          <span class="qNum"><span class="questionId">1</span><span class="questionsCount"></span></span>
+          <span><img class="next" val="1" src="img/icons/circle-chevron-right-solid.svg" alt="next"></span>
+        </div>
+        <button type="button" onclick="showResults()">結果を表示</button>
+      </form>
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <footer>© 2024 株式会社LASTE</footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/askQuestion.js"></script>
+  
+</body>
+</html>

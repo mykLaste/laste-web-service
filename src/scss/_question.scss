@@ -1,0 +1,120 @@
+#hpquestion {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  // background-color: $bgGray; /* Teal background */
+  // background-color: #004f54; /* Teal background */
+  // color: white;
+
+  .lead {
+    font-size: $fsbodyS;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 0;
+  }
+
+  #quizForm {
+
+    #questions {
+      font-size: $fsbodySS;
+
+      .question {
+        background: $bgDarkGray;
+        padding: 60px 60px 80px;
+        width: 100%;
+        min-height: 600px;
+        // display: flex;
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+
+        .title {
+          font-weight: 700;
+          font-size: $fsbodyM;
+          // color: $darkgrey;
+          // margin: 0;
+          margin-top: 0;
+          width: 100%;
+
+          span {
+            display: inline-block;
+          }
+        }
+
+        .answer {
+          background: white;
+          margin-top: 20px;
+          margin-left: 30px;
+          margin-right: 30px;
+          padding: 0;
+          font-size: $fsbodyS;
+          font-weight: 700;
+          border-radius: 8px;
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+          min-width: 180px;
+          text-align: center;
+          display: flex;
+
+          &:has(input:checked) {
+            background: $darkblue;
+            color: white;
+          }
+
+          input {
+            display: none;
+          }
+
+          label {
+            cursor: pointer;
+            // height: 3em;
+            // line-height: 3em;
+            flex-grow: 1;
+            padding: 20px 40px;
+          }
+        }
+
+      }
+
+      .question1 {
+        display: flex;
+      }
+
+
+    }
+
+    .control {
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // position: absolute;
+      // bottom: 0;
+      transform: translateY(-80px);
+      padding: 0 30px;
+
+      span {
+        width: 60px;
+
+        img {
+          width: 100%;
+          content: black;
+          cursor: pointer;
+        }
+      }
+
+      .prev {
+        display: none;
+      }
+
+      .qNum {
+        text-align: center;
+        font-weight: 700;
+        color: $darkgrey;
+      }
+    }
+
+  }
+
+}

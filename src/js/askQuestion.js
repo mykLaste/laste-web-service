@@ -382,10 +382,10 @@ function answerCount() {
             // console.log(newArr.size);
             if (newArr.size == questions.length) {
                 console.log("all answered");
-                // document.querySelector(`.showResult`).style.display = 'block';
+                document.querySelector(`.showResult`).style.display = 'block';
                 document.querySelector(`#missing`).style.display = 'none';
             } else {
-                // document.querySelector(`.showResult`).style.display = 'none';
+                document.querySelector(`.showResult`).style.display = 'none';
             }
         }
     }

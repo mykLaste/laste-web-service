@@ -1345,10 +1345,9 @@ footer {
     margin-bottom: 10px;
     padding-bottom: 10px;
   }
-}
-
-#home .smart .title span {
-  display: inline-block;
+  #home .smart .title span {
+    display: inline-block;
+  }
 }
 
 #home .smart .list-container {
@@ -1593,6 +1592,26 @@ footer {
   margin-top: 0;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion .lead {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion main {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm {
+    margin-bottom: 30px;
+  }
+}
+
 #hpquestion #quizForm #questions {
   font-size: 1.3rem;
 }
@@ -1617,11 +1636,28 @@ footer {
           box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm #questions .question {
+    border-radius: 8px;
+    background: #E8FCFF;
+    padding: 20px 10px 50px;
+    min-height: 240px;
+    -webkit-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
 #hpquestion #quizForm #questions .question .title {
   font-weight: 700;
   font-size: 1.8rem;
   margin-top: 0;
   width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm #questions .question .title {
+    font-size: 1rem;
+  }
 }
 
 #hpquestion #quizForm #questions .question .title span {
@@ -1646,6 +1682,25 @@ footer {
   display: flex;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm #questions .question .answer {
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 90px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 #hpquestion #quizForm #questions .question .answer:hover {
   background: #1f2685b4;
   color: white;
@@ -1666,6 +1721,12 @@ footer {
       -ms-flex-positive: 1;
           flex-grow: 1;
   padding: 20px 40px;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm #questions .question .answer label {
+    padding: 8px 10px;
+  }
 }
 
 #hpquestion #quizForm #questions .question1 {
@@ -1690,8 +1751,23 @@ footer {
   padding: 0 30px;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm .control {
+    margin-bottom: 20px;
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+    padding: 0 10px;
+  }
+}
+
 #hpquestion #quizForm .control span {
   width: 60px;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm .control span {
+    width: 30px;
+  }
 }
 
 #hpquestion #quizForm .control span img {
@@ -1722,6 +1798,12 @@ footer {
   color: #666666;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm .control .qNum {
+    width: auto;
+  }
+}
+
 #hpquestion #quizForm .showResult {
   text-align: center;
   display: none;
@@ -1742,6 +1824,14 @@ footer {
   cursor: pointer;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm .showResult .showResultButton {
+    padding: 8px 10px;
+    font-size: 1rem;
+    min-width: 90px;
+  }
+}
+
 #hpquestion #quizForm #missing {
   display: none;
 }
@@ -1750,6 +1840,12 @@ footer {
   color: red;
   margin-right: 20px;
   display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #quizForm #missing .missingEle {
+    margin-right: 10px;
+  }
 }
 
 #hpquestion #results {
@@ -1765,12 +1861,33 @@ footer {
   text-align: center;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #results {
+    padding: 20px;
+    min-height: 300px;
+    margin-bottom: 40px;
+  }
+}
+
 #hpquestion #results .title {
   font-size: 2.8rem;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #results .title {
+    font-size: 2rem;
+  }
+}
+
 #hpquestion #results .lead {
   margin-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results .lead {
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
 }
 
 #hpquestion #results #report {
@@ -1788,6 +1905,14 @@ footer {
   color: white;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #results #report .report_genre {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+  }
+}
+
 #hpquestion #results #report .report_genre_detail {
   margin-bottom: 60px;
   background: white;
@@ -1795,6 +1920,14 @@ footer {
           box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   color: black;
   padding: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results #report .report_genre_detail {
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 0.8rem;
+  }
 }
 
 #hpquestion #results #report .report_genre_detail .report_toggle {
@@ -1831,16 +1964,41 @@ footer {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report {
+    margin-bottom: 20px;
+  }
+}
+
 #hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_question {
   font-weight: 700;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_question {
+    margin-bottom: 10px;
+  }
 }
 
 #hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_answer {
   padding-left: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  #hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_answer {
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 #hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_reason {
   padding-left: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_reason {
+    padding-left: 10px;
+  }
 }
 
 #hpquestion #results #report .report_toggle.active + .report_genre_detail_reason {

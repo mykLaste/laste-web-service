@@ -266,7 +266,6 @@ document.addEventListener('DOMContentLoaded', function() {
         answerButton[i].addEventListener('change', function() {
             // console.log(`${this.name} is answerd.`);
             answerCount();
-
         });
     }
 
@@ -278,17 +277,17 @@ function showResults() {
     window.scrollTo({
         top: document.querySelector('#results').offsetTop,
         behavior: 'smooth'
-      });
+    });
 
     const genreReport = {};
 
     questions.forEach(question => {
         const selectedAnswerElements = document.querySelectorAll(`input[name="question${question.id}"]:checked`);
-    
+
         if (selectedAnswerElements.length > 0) {
             selectedAnswerElements.forEach(selectedAnswerElement => {
                 const selectedAnswerIndex = selectedAnswerElement.value;
-    
+
                 if (selectedAnswerIndex !== undefined) {
                     const selectedText = question.answers[selectedAnswerIndex].text;
                     const selectedGenres = question.answers[selectedAnswerIndex].genre;
@@ -342,6 +341,30 @@ function showResults() {
             this.classList.toggle('active');
         });
     }
+
+    // 保存ボタン
+    document.getElementById('saveButton').addEventListener('click', function(e) {
+        console.log("clicked");
+
+        const name = document.getElementById('savedName').value;
+        const report = document.getElementById('savedName').innerHTML;
+
+        if (name === '') {
+            document.getElementById('saveError').style.display = 'block';
+        } else {
+            document.getElementById('saveError').style.display = 'none';
+
+            console.log(name);
+            // console.log(resultsHTML);
+            console.log(genreReport);
+            saveToAzure(name, genreReport)
+            .then(response => response.text())
+            .then(text => {
+                console.log(text);
+            })
+            .catch(error => console.error(error));
+        }
+    });
 }
 
 function answerCount() {
@@ -359,10 +382,10 @@ function answerCount() {
             // console.log(newArr.size);
             if (newArr.size == questions.length) {
                 console.log("all answered");
-                document.querySelector(`.showResult`).style.display = 'block';
+                // document.querySelector(`.showResult`).style.display = 'block';
                 document.querySelector(`#missing`).style.display = 'none';
             } else {
-                document.querySelector(`.showResult`).style.display = 'none';
+                // document.querySelector(`.showResult`).style.display = 'none';
             }
         }
     }
@@ -395,5 +418,36 @@ function answerCount() {
         document.querySelector(`#missing`).style.display = 'block';
     }
 
+
+}
+
+async function saveToAzure(name, genreReport) {
+    console.log('saveToAzure');
+    console.log(name);
+    console.log(genreReport);
+
+
+    const url = 'https://lastewebtodb.azurewebsites.net:443/api/SaveHPAnswer/triggers/When_a_HTTP_request_is_received/invoke?api-version=2022-05-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=TLePGeDZk9J3WWHb2WBJH6CP1HYSAtUW7pcCewB4zII';
+
+    const response = await fetch(url, {
+        // method: 'GET', // or 'POST'
+        method: 'POST',
+        headers: {
+        // 'Content-Type': 'application/json',
+        // 'Content-Type': 'text/plain',
+        'Content-Type': 'application/json',
+        // 'x-functions-key': 'your_function_key' // if required
+        },
+        // body: JSON.stringify(data), // if POST request
+        // body: name, // if POST request
+        body: JSON.stringify({ name: name, genreReport: genreReport })
+    })
+    ;
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return response;
 
 }

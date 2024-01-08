@@ -1806,7 +1806,6 @@ footer {
 
 #hpquestion #quizForm .showResult {
   text-align: center;
-  display: none;
 }
 
 #hpquestion #quizForm .showResult .showResultButton {
@@ -1849,7 +1848,6 @@ footer {
 }
 
 #hpquestion #results {
-  display: none;
   border-radius: 8px;
   background: #EAFAF5;
   padding: 40px;
@@ -2003,6 +2001,119 @@ footer {
 
 #hpquestion #results #report .report_toggle.active + .report_genre_detail_reason {
   display: block;
+}
+
+#hpquestion #results .saveForm {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+#hpquestion #results .saveForm .saveForm_lead {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results .saveForm .saveForm_lead {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+}
+
+#hpquestion #results .saveForm .nameField {
+  margin-bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results .saveForm .nameField {
+    margin-bottom: 30px;
+  }
+}
+
+#hpquestion #results .saveForm .nameField p {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  width: 30%;
+  line-height: 2em;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results .saveForm .nameField p {
+    margin-right: 0;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+}
+
+#hpquestion #results .saveForm .nameField .nameField_input {
+  width: 70%;
+  text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results .saveForm .nameField .nameField_input {
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 0 0.5em;
+  }
+}
+
+#hpquestion #results .saveForm .nameField .nameField_input #savedName {
+  font-size: 1.3rem;
+  width: 100%;
+  padding: 0 0.5em;
+  height: 2em;
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results .saveForm .nameField .nameField_input #savedName {
+    font-size: 0.8rem;
+  }
+}
+
+#hpquestion #results .saveForm .nameField #saveError {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 10px;
+  display: block;
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results .saveForm .nameField #saveError {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+}
+
+#hpquestion #results .saveForm #saveButton button {
+  border: 2px solid #00b8ad;
+  background: #00b8ad;
+  color: white;
+  padding: 10px 40px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-radius: 8px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  #hpquestion #results .saveForm #saveButton button {
+    padding: 8px 10px;
+    font-size: 1rem;
+    min-width: 90px;
+  }
 }
 
 #sample1 {

@@ -187,7 +187,7 @@
 
     .showResult {
       text-align: center;
-      display: none;
+      // display: none;
 
       .showResultButton {
         border: 2px solid $turquoise;
@@ -227,7 +227,7 @@
   }
 
   #results {
-    display: none;
+    // display: none;
     border-radius: 8px;
     background: $bgGreen;
     padding: 40px;
@@ -349,8 +349,104 @@
 
       .report_toggle.active + .report_genre_detail_reason {
         display: block;
+      }
+    }
 
+    .saveForm {
+      max-width: 600px;
+      margin: 0 auto;
+      margin-top: 80px;
 
+      .saveForm_lead {
+        margin-bottom: 20px;
+
+        @include mq($mobileSize) {
+          margin-bottom: 10px;
+          font-size: $mfsbodyS;
+        }
+      }
+
+      .nameField {
+        margin-bottom: 60px;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include mq($mobileSize) {
+          margin-bottom: 30px;
+        }
+
+        p {
+          margin: 0;
+          font-size: $fsbodySS;
+          font-weight: 700;
+          width: 30%;
+          line-height: 2em;
+
+          @include mq($mobileSize) {
+            margin-right: 0;
+            font-size: $mfsbodySS;
+            width: 100%;
+          }
+        }
+
+        .nameField_input {
+          width: 70%;
+          text-align: left;
+
+          @include mq($mobileSize) {
+            font-size: $mfsbodySS;
+            width: 100%;
+            padding: 0 0.5em;
+          }
+
+          #savedName {
+            font-size: $fsbodySS;
+            width: 100%;
+            padding: 0 0.5em;
+            height: 2em;
+            display: block;
+
+            @include mq($mobileSize) {
+              font-size: $mfsbodySS;
+            }
+          }
+        }
+
+        #saveError {
+          color: red;
+          font-size: 0.9em;
+          margin-top: 10px;
+          display: block;
+          display: none;
+
+          @include mq($mobileSize) {
+            font-size: $mfsbodySS;
+            margin-top: 4px;
+          }
+        }
+      }
+
+      #saveButton {
+
+        button {
+          border: 2px solid $turquoise;
+          background: $turquoise;
+          color: white;
+          padding: 10px 40px;
+          font-size: $fsbodyS;
+          font-weight: 700;
+          border-radius: 8px;
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+          min-width: 180px;
+          text-align: center;
+          cursor: pointer;
+  
+          @include mq($mobileSize) {
+            padding: 8px 10px;
+            font-size: $mfsbodyS;
+            min-width: 90px;
+          }
+        }
       }
     }
   }

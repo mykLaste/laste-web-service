@@ -14,6 +14,12 @@ a:hover, button:hover {
   padding: 100px 0;
   margin: 0 auto;
   max-width: 1200px;
+
+  @include mq($mobileSize) {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+  }
 }
 
 .header {
@@ -27,12 +33,23 @@ a:hover, button:hover {
   align-items: center;
   z-index: 100;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  @include mq($mobileSize) {
+    padding: 8px 4%;
+    position: relative;
+    flex-wrap: wrap;
+  }
 
   .leftside {
     display: flex;
     align-items: center;
     gap: 1rem;
     cursor: pointer;
+
+    @include mq($mobileSize) {
+      width: 100%;
+      gap: 0.5rem;
+    }
   }
 
   .logo {
@@ -51,11 +68,19 @@ a:hover, button:hover {
     align-items: center;
     width: 400px;
 
+    @include mq($mobileSize) {
+      width: 260px;
+    }
+
     h1 {
       margin: 0;
       font-size: $fsH1;
       font-weight: 700;
       width: 100%;
+
+      @include mq($mobileSize) {
+        font-size: $mfsH1;
+      }
     }
 
     .subtitle {
@@ -63,13 +88,22 @@ a:hover, button:hover {
       font-weight: 400;
       width: 100%;
       margin: 0;
+
+      @include mq($mobileSize) {
+        font-size: $mfsH1Sub;
+      }
     }
   }
 
   .nav-menu {
     display: flex;
     gap: 1rem;
-    // align-items: stretch;
+    
+    @include mq($mobileSize) {
+      flex-wrap: wrap;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
 
     .nav-item {
       color: black;
@@ -82,6 +116,7 @@ a:hover, button:hover {
       white-space: nowrap;
       align-items: center;
       font-size: $fsNavMenu;
+
     }
 
     .nav-item-answer {
@@ -93,8 +128,17 @@ a:hover, button:hover {
       padding-left: 2rem;
       padding-right: 2rem;
 
+      @include mq($mobileSize) {
+        justify-content: center;
+        padding: 0.4rem 0.8rem;
+      }
+
       span {
         width: 100%;
+
+        @include mq($mobileSize) {
+          width: auto;
+        }
       }
     }
 
@@ -105,6 +149,10 @@ a:hover, button:hover {
       border-radius: 4px;
       padding-left: 1.6rem;
       padding-right: 1.6rem;
+
+      @include mq($mobileSize) {
+        padding: 0.4rem 0.8rem;
+      }
 
       span {
         width: 100%;
@@ -120,4 +168,9 @@ footer {
   margin: 0 auto;
   text-align: center;
   font-size: $fsFooter;
+
+  @include mq($mobileSize) {
+    padding: 10px 10%;
+  }
 }
+

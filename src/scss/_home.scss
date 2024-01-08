@@ -16,6 +16,11 @@
     padding: 50px 10%;
     min-height: 50vh;
     color: white;
+    
+    @include mq($mobileSize) {
+      padding: 0;
+      min-height: auto;
+    }
 
     .content-box {
       background: rgba(0, 0, 0, 0.5);
@@ -23,19 +28,39 @@
       border-radius: 10px;
       max-width: 600px;
 
+      @include mq($mobileSize) {
+        padding: 40px 20px;
+        max-width: 100%;
+        height: 100%;
+        min-height: 50vh;
+      }
+
       .title {
         font-size: $fsFirstViewL;
         font-weight: 700;
         margin-bottom: 10px;
+
+        @include mq($mobileSize) {
+          font-size: $mfsFirstViewL;
+          margin-bottom: 10px;
+        }
       }
 
       .subtitle {
         font-size: $fsFirstViewM;
         margin-bottom: 50px;
+
+        @include mq($mobileSize) {
+          font-size: $mfsFirstViewM;
+          margin-bottom: 50px;
+        }
       }
 
       .action-button-wrapper {
         text-align: right;
+        @include mq($mobileSize) {
+          text-align: center;
+        }
 
         .action-button {
           background-color: $turquoise;
@@ -47,6 +72,11 @@
           border-radius: 5px;
           cursor: pointer;
           transition: background-color 0.3s;
+
+          @include mq($mobileSize) {
+            padding: 1rem 1.5rem;
+            font-size: $mfsFirstViewM;
+          }
         }
 
         .action-button:hover {
@@ -61,6 +91,11 @@
     color: white;
     line-height: 1.6;
     text-align: center;
+    overflow: hidden;
+
+    @include mq($mobileSize) {
+      padding: 0 10px 20px;
+    }
 
     .title {
       font-size: $fsbodyL;
@@ -70,18 +105,33 @@
       border-bottom: 2px solid white;
       padding: 20px 0;
       text-align: center;
+
+      @include mq($mobileSize) {
+        font-size: $mfsbodyL;
+        margin-bottom: 20px;
+        border-bottom: 2px solid white;
+        padding: 20px 0 10px;
+      }
     }
 
     .lead {
       font-size: $fsbodyM;
       font-weight: 600;
       margin-bottom: 15px;
+
+      @include mq($mobileSize) {
+        font-size: $mfsbodyM;
+        margin-bottom: 0;
+      }
     }
 
 
     .list-container {
       display: inline-block;
       text-align: left;
+      @include mq($mobileSize) {
+        display: block;
+      }
 
       ul {
         list-style: none;
@@ -95,6 +145,16 @@
         color: $darkgrey;
         background: rgba(215, 226, 220, 0.83);
         padding: 4px 50px 4px 10px;
+
+        @include mq($mobileSize) {
+          margin-bottom: 10px;
+          font-size: $mfsbodySS;
+          font-weight: 600;
+          color: $darkgrey;
+          background: rgba(215, 226, 220, 0.83);
+          padding: 4px 10px 4px 10px;
+          max-width: 90%;
+        }
       }
 
       .list-item::before {
@@ -114,6 +174,11 @@
     line-height: 1.6;
     text-align: center;
     background: $bgGrey;
+    overflow: hidden;
+    @include mq($mobileSize) {
+      margin-bottom: 10px;
+      padding: 0 10px;
+    }
 
     .title {
       font-size: $fsbodyL;
@@ -124,6 +189,13 @@
       padding-bottom: 20px;
       text-align: center;
 
+      @include mq($mobileSize) {
+        font-size: $mfsbodyM;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+
       span {
         display: inline-block;
       }
@@ -132,15 +204,24 @@
     .list-container {
       display: inline-block;
       text-align: left;
+      @include mq($mobileSize) {
+        display: block;
+        padding: 0 20px;
+      }
 
       .list-title {
         font-size: $fsbodyS;
         font-weight: 600;
         margin-bottom: 15px;
+
+        @include mq($mobileSize) {
+          font-size: $mfsbodyS;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
       }
 
       ul {
-        // list-style: none;
         padding: 0;
       }
 
@@ -148,16 +229,12 @@
         margin-bottom: 20px;
         font-size: $fsbodyS;
         font-weight: 600;
-        // color: #455F51;
-        // background: rgba(215, 226, 220, 0.83);
-        // padding: 4px 50px 4px 10px;
-      }
 
-      // .list-item::before {
-      //   content: '✔';
-      //   color: #4CAF50; /* Checkmark color */
-      //   margin-right: 12px;
-      // }
+        @include mq($mobileSize) {
+          margin-bottom: 10px;
+          font-size: $mfsbodyS;
+        }
+      }
 
       .list-item:last-child {
         margin-bottom: 0;
@@ -167,16 +244,22 @@
 
   .tsukaiwake {
     background: $bgDarkGray;
-    // background: linear-gradient(to right, $bgDarkGray, $darkgrey);
+
+    @include mq($mobileSize) {
+      padding: 20px 0;
+    }
 
     .tsukaiwake-image {
-      // padding-top: 20px;
       text-align: center;
 
       img {
         display: inline-block;
         width: 100%;
         max-width: 1000px;
+
+        @include mq($mobileSize) {
+          max-width: 90%;
+        }
       }
     }
 
@@ -185,17 +268,31 @@
       font-size: $fsbodyL;
       text-align: right;
       margin-bottom: 0;
+
+      @include mq($mobileSize) {
+        font-size: $mfsbodyS;
+        text-align: center;
+      }
     }
   }
 
   .goshienshimasu {
     background: $bgGreen;
 
+    @include mq($mobileSize) {
+      padding: 20px 0 40px;
+    }
+
     .goshienshimasu-image {
+      text-align: center;
 
       img {
         display: inline-block;
         width: 100%;
+
+        @include mq($mobileSize) {
+          max-width: 90%;
+        }
       }
     }
 
@@ -203,6 +300,12 @@
       font-size: $fsbodyL;
       position: absolute;
       transform: translateY(-120px);
+
+      @include mq($mobileSize) {
+        font-size: $mfsbodyS;
+        text-align: center;
+        transform: translate(10px,-30px);
+      }
     }
   }
 
@@ -211,6 +314,9 @@
     color: white;
     line-height: 1.6;
     text-align: center;
+    @include mq($mobileSize) {
+      padding: 10px 10px;
+    }
 
     .title {
       font-size: $fsbodyL;
@@ -221,6 +327,13 @@
       padding-bottom: 20px;
       text-align: center;
 
+      @include mq($mobileSize) {
+        font-size: $mfsbodyM;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+
       span {
         display: inline-block;
       }
@@ -230,14 +343,24 @@
       display: inline-block;
       text-align: left;
 
+      @include mq($mobileSize) {
+        display: block;
+        padding: 0 20px;
+      }
+
       .list-title {
         font-size: $fsbodyS;
         font-weight: 600;
         margin-bottom: 15px;
+
+        @include mq($mobileSize) {
+          font-size: $mfsbodyS;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
       }
 
       ul {
-        // list-style: none;
         padding: 0;
       }
 
@@ -245,16 +368,12 @@
         margin-bottom: 20px;
         font-size: $fsbodyS;
         font-weight: 600;
-        // color: #455F51;
-        // background: rgba(215, 226, 220, 0.83);
-        // padding: 4px 50px 4px 10px;
-      }
 
-      // .list-item::before {
-      //   content: '✔';
-      //   color: #4CAF50; /* Checkmark color */
-      //   margin-right: 12px;
-      // }
+        @include mq($mobileSize) {
+          margin-bottom: 10px;
+          font-size: $mfsbodyS;
+        }
+      }
 
       .list-item:last-child {
         margin-bottom: 0;
@@ -270,6 +389,9 @@
   .smart2 {
     background: $darkgreen;
     background: linear-gradient(to right, white, $darkgreen);
+    @include mq($mobileSize) {
+      padding: 20px 10px;
+    }
 
     .normal-section {
       padding-top: 0;
@@ -280,9 +402,16 @@
         width: 50%;
         position: relative;
 
+        @include mq($mobileSize) {
+          width: 100%;
+        }
+
         img {
           display: inline-block;
           width: 100%;
+          @include mq($mobileSize) {
+            display: none;
+          }
         }
       }
 
@@ -293,9 +422,22 @@
         top: 30px;
         text-align: center;
         width: 100%;
+
+        @include mq($mobileSize) {
+          color: black;
+          font-size: $mfsbodyM;
+          position: relative;
+          top: 0;
+          left: 0;
+          text-align: center;
+          width: 100%;
+          margin: 0;
+          margin-bottom: 10px;
+          border-bottom: 2px solid black;
+        }
       }
 
-      .lead {
+      .lead_pc {
         font-size: $fsbodyM;
         font-weight: 600;
         position: absolute;
@@ -305,6 +447,21 @@
         width: 60%;
         transform: translate(4em, -40%);
         color: white;
+
+        @include mq($mobileSize) {
+          display: none;
+        }
+      }
+
+      .lead_mb {
+        display: none;
+
+        @include mq($mobileSize) {
+          display: block;
+          font-size: $mfsbodyS;
+          font-weight: 600;
+          padding: 0 20px;
+        }
       }
     }
   }
@@ -314,6 +471,11 @@
     line-height: 1.6;
     text-align: center;
     background: $bgGrey;
+    overflow: hidden;
+
+    @include mq($mobileSize) {
+      padding: 10px 10px;
+    }
 
     .title {
       font-size: $fsbodyL;
@@ -324,19 +486,39 @@
       padding-bottom: 20px;
       text-align: center;
 
-      span {
-        display: inline-block;
+      @include mq($mobileSize) {
+        font-size: $mfsbodyM;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        span {
+          display: inline-block;
+        }
       }
+
+
     }
 
     .list-container {
       display: inline-block;
       text-align: left;
 
+      @include mq($mobileSize) {
+        display: block;
+        padding: 0 20px;
+      }
+
       .list-title {
         font-size: $fsbodyS;
         font-weight: 600;
         margin-bottom: 15px;
+
+        @include mq($mobileSize) {
+          font-size: $mfsbodyS;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
       }
 
       ul {
@@ -348,6 +530,11 @@
         margin-bottom: 20px;
         font-size: $fsbodyS;
         font-weight: 600;
+
+        @include mq($mobileSize) {
+          margin-bottom: 10px;
+          font-size: $mfsbodyS;
+        }
       }
 
       .list-item:last-child {
@@ -357,3 +544,4 @@
   }
 
 }
+

@@ -547,6 +547,10 @@ li {
           transform: translateX(1.4em);
 }
 
+a:hover, button:hover {
+  opacity: 0.8;
+}
+
 .normal-section {
   padding: 100px 0;
   margin: 0 auto;
@@ -652,7 +656,7 @@ li {
 .header .nav-menu .nav-item-answer {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: #6AB82D;
+  background-color: #00b8ad;
   color: white;
   font-weight: 600;
   border-radius: 4px;
@@ -665,7 +669,7 @@ li {
 }
 
 .header .nav-menu .nav-item-contact {
-  background-color: #076BAF;
+  background-color: #003c96;
   color: white;
   font-weight: 600;
   border-radius: 4px;
@@ -684,6 +688,183 @@ footer {
   margin: 0 auto;
   text-align: center;
   font-size: 1rem;
+}
+
+/* その場で */
+.fadeIn {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 下から */
+.fadeUp {
+  -webkit-animation-name: fadeUpAnime;
+          animation-name: fadeUpAnime;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* 上から */
+.fadeDown {
+  -webkit-animation-name: fadeDownAnime;
+          animation-name: fadeDownAnime;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeDownAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeDownAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* 左から */
+.fadeLeft {
+  -webkit-animation-name: fadeLeftAnime;
+          animation-name: fadeLeftAnime;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/* 右から */
+.fadeRight {
+  -webkit-animation-name: fadeRightAnime;
+          animation-name: fadeRightAnime;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeRightAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeRightAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 #home {
@@ -706,7 +887,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   padding: 50px 10%;
-  height: 50vh;
+  min-height: 50vh;
   color: white;
 }
 
@@ -733,7 +914,7 @@ footer {
 }
 
 #home .firstview .content-box .action-button-wrapper .action-button {
-  background-color: #6AB82D;
+  background-color: #00b8ad;
   color: white;
   border: none;
   padding: 1rem 1.5rem;
@@ -746,7 +927,7 @@ footer {
 }
 
 #home .firstview .content-box .action-button-wrapper .action-button:hover {
-  background-color: #6AB82D;
+  opacity: 0.8;
 }
 
 #home .gozonji {
@@ -850,7 +1031,7 @@ footer {
 }
 
 #home .tsukaiwake {
-  background: #ABB7B3;
+  background: #CACACA;
 }
 
 #home .tsukaiwake .tsukaiwake-image {
@@ -940,6 +1121,8 @@ footer {
 
 #home .smart2 {
   background: #006536;
+  background: -webkit-gradient(linear, left top, right top, from(white), to(#006536));
+  background: linear-gradient(to right, white, #006536);
 }
 
 #home .smart2 .normal-section {
@@ -1032,8 +1215,7 @@ footer {
 }
 
 #hpquestion .lead {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   margin-bottom: 60px;
   margin-top: 0;
@@ -1044,10 +1226,11 @@ footer {
 }
 
 #hpquestion #quizForm #questions .question {
-  background: #CACACA;
-  padding: 60px 60px 80px;
+  border-radius: 8px;
+  background: #E8FCFF;
+  padding: 40px 60px 60px;
   width: 100%;
-  min-height: 600px;
+  min-height: 500px;
   display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -1058,11 +1241,13 @@ footer {
       -ms-flex-align: start;
           align-items: flex-start;
   position: relative;
+  -webkit-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 #hpquestion #quizForm #questions .question .title {
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   margin-top: 0;
   width: 100%;
 }
@@ -1089,8 +1274,13 @@ footer {
   display: flex;
 }
 
+#hpquestion #quizForm #questions .question .answer:hover {
+  background: #1f2685b4;
+  color: white;
+}
+
 #hpquestion #quizForm #questions .question .answer:has(input:checked) {
-  background: #1F2585;
+  background: #003c96;
   color: white;
 }
 
@@ -1142,10 +1332,147 @@ footer {
   display: none;
 }
 
+#hpquestion #quizForm .control .prev:hover {
+  opacity: 0.8;
+}
+
+#hpquestion #quizForm .control .next {
+  fill: #003c96;
+}
+
+#hpquestion #quizForm .control .next:hover {
+  opacity: 0.8;
+}
+
 #hpquestion #quizForm .control .qNum {
   text-align: center;
   font-weight: 700;
   color: #666666;
+}
+
+#hpquestion #quizForm .showResult {
+  text-align: center;
+  display: none;
+}
+
+#hpquestion #quizForm .showResult .showResultButton {
+  border: 2px solid #00b8ad;
+  background: #00b8ad;
+  color: white;
+  padding: 10px 40px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-radius: 8px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#hpquestion #quizForm #missing {
+  display: none;
+}
+
+#hpquestion #quizForm #missing .missingEle {
+  color: red;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+#hpquestion #results {
+  display: none;
+  border-radius: 8px;
+  background: #EAFAF5;
+  padding: 40px;
+  width: 100%;
+  min-height: 600px;
+  -webkit-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+#hpquestion #results .title {
+  font-size: 2.8rem;
+}
+
+#hpquestion #results .lead {
+  margin-bottom: 40px;
+}
+
+#hpquestion #results #report {
+  text-align: left;
+}
+
+#hpquestion #results #report .report_genre {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: #003c96;
+  padding: 0 20px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+#hpquestion #results #report .report_genre_detail {
+  margin-bottom: 60px;
+  background: white;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+  padding: 20px;
+}
+
+#hpquestion #results #report .report_genre_detail .report_toggle {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0;
+}
+
+#hpquestion #results #report .report_genre_detail .report_toggle::after {
+  content: '\25B2';
+  /* 上向きの三角 */
+  display: inline-block;
+  margin-left: 5px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#hpquestion #results #report .report_genre_detail .report_toggle.active::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#hpquestion #results #report .report_genre_detail .report_genre_detail_reason {
+  display: none;
+}
+
+#hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report {
+  margin-bottom: 20px;
+}
+
+#hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_question {
+  font-weight: 700;
+}
+
+#hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_answer {
+  padding-left: 20px;
+}
+
+#hpquestion #results #report .report_genre_detail .report_genre_detail_reason .report .report_reason {
+  padding-left: 20px;
+}
+
+#hpquestion #results #report .report_toggle.active + .report_genre_detail_reason {
+  display: block;
 }
 
 #sample1 {

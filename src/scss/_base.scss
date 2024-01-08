@@ -6,6 +6,10 @@ li {
   transform: translateX(1.4em);
 }
 
+a:hover, button:hover {
+  opacity: 0.8;
+}
+
 .normal-section {
   padding: 100px 0;
   margin: 0 auto;
@@ -82,7 +86,7 @@ li {
 
     .nav-item-answer {
       flex-wrap: wrap;
-      background-color: $lightgreen;
+      background-color: $turquoise;
       color: white;
       font-weight: 600;
       border-radius: 4px;
@@ -95,7 +99,7 @@ li {
     }
 
     .nav-item-contact {
-      background-color: $lightblue;
+      background-color: $darkblue;
       color: white;
       font-weight: 600;
       border-radius: 4px;

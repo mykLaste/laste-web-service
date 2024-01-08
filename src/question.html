@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
 
-<title>ネット通販支援サービス - LASTE</title>
+<title>ネット運用支援サービス - LASTE</title>
 
 </head>
 <body id="hpquestion">
@@ -32,9 +32,9 @@
   </header>
 
   <main>
-    <section class="normal-section">
+    <section id="quiz" class="normal-section">
       <h2 class="lead">
-        あなたに最適なHPを作成するために以下の質問にお答えください
+        あなたに最適なHPを作成するために以下の質問にお答えください。
       </h2>
       <form id="quizForm">
         <div id="questions">
@@ -45,9 +45,17 @@
           <span class="qNum"><span class="questionId">1</span><span class="questionsCount"></span></span>
           <span><img class="next" val="1" src="img/icons/circle-chevron-right-solid.svg" alt="next"></span>
         </div>
-        <button type="button" onclick="showResults()">結果を表示</button>
+        <div class="showResult"><button class="showResultButton" type="button" onclick="showResults()">結果を表示</button></div>
+        <div id="missing"></div>
       </form>
-      <div id="results"></div>
+    </section>
+
+    <section id="results" class="normal-section fadeUp">
+      <h2 class="title">診断結果</h2>
+      <p class="lead">あなたにHPに含めた方が良い項目はこちらです。</p>
+      <div id="report">
+
+      </div>
     </section>
   </main>
 

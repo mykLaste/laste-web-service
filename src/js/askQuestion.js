@@ -280,6 +280,7 @@ function showResults() {
     });
 
     const genreReport = {};
+    const saveReport = {};
 
     questions.forEach(question => {
         const selectedAnswerElements = document.querySelectorAll(`input[name="question${question.id}"]:checked`);
@@ -295,15 +296,18 @@ function showResults() {
                     selectedGenres.forEach(genre => {
                         if(genreReport[genre] == undefined) {
                             genreReport[genre] = [];
+                            saveReport[genre] = [];
                         }
                         genreReport[genre].push({id: question.id, question: question, answer: selectedText, reason: selectedReason});
+                        saveReport[genre].push({id: question.id, question: question.question, answer: selectedText});
                     });
                 }
             });
         }
     });
 
-    console.log(genreReport);
+    // console.log(genreReport);
+    // console.log(saveReport);
 
     // let resultsHTML = "あなたのジャンルごとのポイント:<br>";
     // for (const genre in genrePoints) {
@@ -344,10 +348,9 @@ function showResults() {
 
     // 保存ボタン
     document.getElementById('saveButton').addEventListener('click', function(e) {
-        console.log("clicked");
+        // console.log("clicked");
 
         const name = document.getElementById('savedName').value;
-        const report = document.getElementById('savedName').innerHTML;
 
         if (name === '') {
             document.getElementById('saveError').style.display = 'block';
@@ -356,15 +359,52 @@ function showResults() {
 
             console.log(name);
             // console.log(resultsHTML);
-            console.log(genreReport);
-            saveToAzure(name, genreReport)
-            .then(response => response.text())
-            .then(text => {
-                console.log(text);
-            })
-            .catch(error => console.error(error));
+            console.log(saveReport);
+
+            const currentScrollY = window.scrollY;
+            document.querySelector('.loading_anime').style.top = currentScrollY + 'px';
+            document.querySelector('.completed').style.top = currentScrollY + 'px';
+            document.querySelector('.failed').style.top = currentScrollY + 'px';
+
+            saveToAzure(name, saveReport)
+            .then(function(response) {
+                sendAnimation();
+            }).catch(function(error) {
+                sendAnimation_error();
+            });
+            // .then(response => response.text())
+            // .then(text => {
+            //     console.log(text);
+            // })
+            // .catch(error => console.error(error));
         }
     });
+}
+
+function sendAnimation() {
+    document.querySelector('.loading_anime').style.display = 'none';
+    document.querySelector('.completed').style.display = 'flex';
+    document.querySelector('.completed').style.transition = 'opacity 2s';
+    document.querySelector('.completed').style.opacity = '0.8';
+
+    setTimeout(function() {
+        document.querySelector('.completed').style.transition = 'opacity 2s';
+        document.querySelector('.completed').style.opacity = '0';
+        document.querySelector('.completed').style.display = 'none';
+    }, 2000);
+}
+
+function sendAnimation_error() {
+    document.querySelector('.loading_anime').style.display = 'none';
+    document.querySelector('.failed').style.display = 'flex';
+    document.querySelector('.failed').style.transition = 'opacity 2s';
+    document.querySelector('.failed').style.opacity = '0.8';
+
+    setTimeout(function() {
+        document.querySelector('.failed').style.transition = 'opacity 2s';
+        document.querySelector('.failed').style.opacity = '0';
+        document.querySelector('.failed').style.display = 'none';
+    }, 2000);
 }
 
 function answerCount() {
@@ -381,7 +421,7 @@ function answerCount() {
             newArr = new Set(answered);
             // console.log(newArr.size);
             if (newArr.size == questions.length) {
-                console.log("all answered");
+                // console.log("all answered");
                 document.querySelector(`.showResult`).style.display = 'block';
                 document.querySelector(`#missing`).style.display = 'none';
             } else {
@@ -414,7 +454,7 @@ function answerCount() {
     // console.log(newArr2);
 
     if(newArr2.indexOf(finalQ) == -1 && newArr.legth != questions.length) {
-        console.log("final question answered, but not all");
+        // console.log("final question answered, but not all");
         document.querySelector(`#missing`).style.display = 'block';
     }
 
@@ -425,6 +465,8 @@ async function saveToAzure(name, genreReport) {
     console.log('saveToAzure');
     console.log(name);
     console.log(genreReport);
+
+    document.querySelector('.loading_anime').style.display = 'flex';
 
 
     const url = 'https://lastewebtodb.azurewebsites.net:443/api/SaveHPAnswer/triggers/When_a_HTTP_request_is_received/invoke?api-version=2022-05-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=TLePGeDZk9J3WWHb2WBJH6CP1HYSAtUW7pcCewB4zII';

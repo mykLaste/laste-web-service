@@ -1,6 +1,7 @@
 #hpquestion {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  position: relative;
 
   .lead {
     font-weight: 500;
@@ -451,4 +452,98 @@
     }
   }
 
+  .loading_anime {
+    background-color: black; //背景色
+    width: 100vw; //横幅を画面いっぱいに指定
+    height: 100vh; //縦幅を・・・同上
+    display: flex; //flexBoxでレイアウト制御します。
+    justify-content: center; //左右中央に指定
+    align-items: center; //上下中央に指定
+    flex-direction: column; //ぐるぐると文字を縦並びにする指定
+    position: absolute; //画面のどこにも動かないように固定します。
+    top: 0; //上から0pxの位置に固定します。
+    z-index: 100; //一番上に表示します。
+    opacity: 0.8;
+    display: none;
+
+    .loader {
+      border: 12px solid $darkgrey; //12pxの白い四角をつくります
+      border-radius: 50%; //作った四角の角を丸めます
+      border-top: 12px solid #3498db; //これを追加！！
+      width: 100px; //ぐるぐるの大きさを決めます
+      height: 100px; //ぐるぐるの大きさを決めます
+      animation: spin 1s linear infinite;  //これを追加！！！
+    }
+
+    @keyframes spin{
+      0%{
+        transform: rotate(0deg);  //アニメーション開始時にどういう状態か？
+      }
+
+      100%{
+        transform: rotate(360deg); //アニメーション終了時にどういう状態か？
+      }
+    }
+
+    .text{
+      color: white; //これはNow loading...の色指定なのでぐるぐるとはあまり関係ない
+      font-weight: 700;
+    }
+  }
+
+  .completed {
+    background-color: black; //背景色
+    width: 100vw; //横幅を画面いっぱいに指定
+    height: 100vh; //縦幅を・・・同上
+    display: flex; //flexBoxでレイアウト制御します。
+    justify-content: center; //左右中央に指定
+    align-items: center; //上下中央に指定
+    flex-direction: column; //ぐるぐると文字を縦並びにする指定
+    position: absolute; //画面のどこにも動かないように固定します。
+    top: 0; //上から0pxの位置に固定します。
+    z-index: 100; //一番上に表示します。
+    opacity: 0.8;
+    display: none;
+
+    .checkmark {
+      color: $turquoise;
+      font-size: 100px;
+      margin: 0;
+    }
+
+    .text{
+      color: white; //これはNow loading...の色指定なのでぐるぐるとはあまり関係ない
+      font-weight: 700;
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+
+  .failed {
+    background-color: black; //背景色
+    width: 100vw; //横幅を画面いっぱいに指定
+    height: 100vh; //縦幅を・・・同上
+    display: flex; //flexBoxでレイアウト制御します。
+    justify-content: center; //左右中央に指定
+    align-items: center; //上下中央に指定
+    flex-direction: column; //ぐるぐると文字を縦並びにする指定
+    position: absolute; //画面のどこにも動かないように固定します。
+    top: 0; //上から0pxの位置に固定します。
+    z-index: 100; //一番上に表示します。
+    opacity: 0.8;
+    display: none;
+
+    .batsu {
+      color: red;
+      font-size: 100px;
+      margin: 0;
+    }
+
+    .text{
+      color: white; //これはNow loading...の色指定なのでぐるぐるとはあまり関係ない
+      font-weight: 700;
+      font-size: 30px;
+      margin: 0;
+    }
+  }
 }
